@@ -1,0 +1,74 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <!-- <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button> -->
+    <h1>Testing App</h1>
+    <span class="menu-spacer"></span>
+    <!-- <div>
+      <a mat-button [routerLink]="'/accounts'"> Accounts </a>
+      <a mat-button [routerLink]="'/create-account'"> Create Account </a>
+      <a mat-button [routerLink]="'/contacts'"> Contacts </a>
+      <a mat-button [routerLink]="'/create-contact'"> Create Contact </a>
+      <a mat-button [routerLink]="'/activities'"> Activities </a>
+      <a mat-button [routerLink]="'/create-activity'"> Create Activity </a>
+
+    </div> -->
+  </mat-toolbar-row>
+
+  <!-- <mat-toolbar-row>
+      <span style="font-size: 12px;">SimpleCRM helps you easily manage your contacts</span>
+    </mat-toolbar-row> -->
+</mat-toolbar>
+<br>
+<div class="example-container">
+  <form class="inputForm" [formGroup]="DetailsForm" autocomplete="off">
+    <br />
+    <div>
+    <mat-form-field >
+        <label>Name</label>
+        <input matInput type="text" id="Name" formControlName="Name" 
+             maxlength="20" />
+        <span class="" *ngIf="DetailsForm.get('Name').errors &&
+        (DetailsForm.get('Name').dirty || 
+        DetailsForm.get('Name').touched)">
+            <span *ngIf="DetailsForm.get('Name').errors.required" class="errors-text">
+                Name is required
+            </span>
+        </span>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field >
+        <label>Email</label>
+        <input matInput type="text" id="Email" formControlName="Email" 
+          />
+    <span class="" *ngIf="DetailsForm.get('Email').errors &&
+    (DetailsForm.get('Email').dirty || 
+    DetailsForm.get('Email').touched)">
+        <span *ngIf="DetailsForm.get('Email').errors.required" class="errors-text">
+            Email is required
+        </span>
+    </span>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field >
+      <label>Salary</label>
+      <input matInput type="text" id="Email" formControlName="Salary" 
+        />
+  <span class="" *ngIf="DetailsForm.get('Salary').errors &&
+  (DetailsForm.get('Salary').dirty || 
+  DetailsForm.get('Salary').touched)">
+      <span *ngIf="DetailsForm.get('Salary').errors.required" class="errors-text">
+          Salary is required
+      </span>
+  </span>
+    </mat-form-field>
+  </div>
+    <div class="form-action text-center">
+        <button mat-raised-button  color="accent" (click)="cancel()" >Back</button>&nbsp;
+        <button mat-raised-button  color="primary" (click)="submitForm()" [disabled]="buttondisable == true">Submit</button>
+    </div>
+</form>
+</div>
